@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#IF File is placed in /etc/network/if-upd/*FILE* make it Executable
+#Also to allow openvpn to be called sudo entries need to be made for example
+#ALL ALL = NOPASSWD: /bin/systemctl stop openvpn@alexperlap.service
+#ALL ALL = NOPASSWD: /bin/systemctl start openvpn@alexperlap.service
+
+
+
 #Checks if host is up, host not routable via vpn
 Recieved="$(ping -w 5 -c 5 172.16.2.12 | grep received | cut -c 24)"
 
