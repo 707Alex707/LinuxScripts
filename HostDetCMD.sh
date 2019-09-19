@@ -8,7 +8,7 @@
 
 
 #Checks if host is up, host not routable via vpn
-Recieved="$(ping -w 5 -c 5 172.16.2.12 | grep received | cut -c 24)"
+Recieved="$(ping -w 5 -c 5 172.16.2.12 | egrep -o [0-9]*[[:space:]]received | grep -o [0-9]*)"
 
 if [ "$Recieved" -gt 0 ];
 then
